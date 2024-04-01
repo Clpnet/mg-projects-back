@@ -1,14 +1,14 @@
-# Usando la imagen oficial de OpenJDK como base
-FROM adoptopenjdk/openjdk17:alpine
+# Utilizar la imagen oficial de OpenJDK como base
+FROM openjdk:latest
 
-# Definir el directorio de trabajo dentro del contenedor
+# Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar el archivo JAR de la aplicación Spring Boot al contenedor
-COPY target/tu-aplicacion.jar /app/tu-aplicacion.jar
+# Copiar el código fuente de tu proyecto al contenedor
+COPY . /app
 
-# Exponer el puerto en el que la aplicación Spring Boot se ejecutará
-EXPOSE 8080
+# Compilar tu proyecto
+RUN javac -d /app/out -sourcepath /app /app/*.java
 
-# Comando para ejecutar la aplicación Spring Boot al iniciar el contenedor
-CMD ["java", "-jar", "/app/tu-aplicacion.jar"]
+# Ejecutar tu aplicación (esto es solo un ejemplo, ajusta según sea necesario)
+CMD ["java", "-cp", "/app/out", "MainClass"]
