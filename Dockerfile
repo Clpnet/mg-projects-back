@@ -1,6 +1,10 @@
 # Utilizar una imagen base que incluya el comando find
 FROM ubuntu:latest
 
+# Actualizar el sistema y luego instalar el JDK de Java
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk
+
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
