@@ -1,0 +1,6 @@
+com\mgprojects\AvengerApplication.class
+com\mgprojects\controllers\AvengerController.class
+com\mgprojects\models\Avenger$AvengerBuilder.class
+com\mgprojects\services\impl\AvengerServiceImpl.class
+com\mgprojects\models\Avenger.class
+com\mgprojects\services\AvengerService.class
