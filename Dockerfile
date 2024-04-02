@@ -1,5 +1,5 @@
-# Utilizar la imagen oficial de OpenJDK como base
-FROM openjdk:latest
+# Utilizar una imagen base que incluya el comando find
+FROM ubuntu:latest
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
